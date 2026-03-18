@@ -6,11 +6,11 @@ const port = process.env.PORT || 8080;
 
 // Serve static Angular files
 app.use(express.static(__dirname));
-app.use(express.static(__dirname + "/dist/ang-app"));
+app.use(express.static(__dirname + "/dist/ang-app/browser"));
 
 // Route to Angular index file
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname + "/dist/ang-app/index.html"));
+  res.sendFile(path.join(__dirname + "/dist/ang-app/browser/index.html"));
 });
 
 // Start server
