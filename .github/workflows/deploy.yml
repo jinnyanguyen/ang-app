@@ -30,3 +30,4 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: "ang-app"
           heroku_email: "anguyen49@my.gcu.edu"
+          dontcreateapp: true
