@@ -11,16 +11,18 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up Java
-        uses: actions/setup-java@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          node-version: '18'
 
-      - name: Build with Maven
-        run: mvn clean package
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular app
+        run: npm run build
 
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.14
