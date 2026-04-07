@@ -24,6 +24,9 @@ jobs:
       - name: Build Angular app
         run: npm run build
 
+      - name: Unshallow Git Repository
+        run: git fetch --prune --unshallow
+
       - name: Deploy to Heroku
         run: |
           git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/ang-app.git
